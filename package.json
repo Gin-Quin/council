@@ -1,0 +1,34 @@
+{
+  "name": "pi-council",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "council": "./dist/council"
+  },
+  "files": [
+    "dist/council",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "build": "bun build --compile --minify --sourcemap=inline --outfile dist/council src/index.ts",
+    "prepack": "bun run build",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun test && bun run build"
+  },
+  "dependencies": {
+    "@earendil-works/pi-ai": "^0.84.4",
+    "@earendil-works/pi-coding-agent": "^0.84.4",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.21",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "bun": ">=1.2.0"
+  }
+}
